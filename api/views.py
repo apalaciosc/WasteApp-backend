@@ -12,20 +12,23 @@ class WorkdayViewSet(viewsets.ModelViewSet):
     #This view automatically provides 'list', 'create', 'retrieve', 'update' and 'destroy' actions
      
     queryset = Workday.objects.all()
-    serializer_class = WorkdaySerializer
+    serializer_class = WorkdaySerializer          
+
+class DriverViewSet(viewsets.ModelViewSet):
+    #This view automatically provides 'list', 'create', 'retrieve', 'update' and 'destroy' actions
      
-    #detail_route decorator stands for single instances, using pk element in its URL pattern
-    #@detail_route(methods=['post'])
-    #def set_comment(self, request, pk=None):
+    queryset = Driver.objects.all()
+    serializer_class = DriverSerializer
 
-        #get workday object
-    #    my_workday = self.get_object()  
+class OperatorViewSet(viewsets.ModelViewSet):
+    #This view automatically provides 'list', 'create', 'retrieve', 'update' and 'destroy' actions
+     
+    queryset = Operator.objects.all()
+    serializer_class = OperatorSerializer
 
-    #    serializer = OperatorSerializer(data=request.data)                 
-    #    if serializer.is_valid():
-    #        serializer.save(post=my_workday)
-    #        return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-    #    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)            
-
+class VehicleViewSet(viewsets.ModelViewSet):
+    #This view automatically provides 'list', 'create', 'retrieve', 'update' and 'destroy' actions
+     
+    queryset = Vehicle.objects.all()
+    serializer_class = VehicleSerializer
 

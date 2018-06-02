@@ -9,8 +9,8 @@ class Workday(models.Model):
     datestart=models.DateField(default=timezone.now)
     datefinish=models.DateField(null=True, blank=True)
     operator=models.ManyToManyField(Operator, null=True, blank=True)
-    driver=models.ForeignKey(Driver, null=True, blank=True,on_delete=models.CASCADE)
-    vehicle=models.ForeignKey(Vehicle, null=True, blank=True,on_delete=models.CASCADE)
+    driver=models.ForeignKey(Driver, null=True, blank=True,on_delete=models.SET_NULL)
+    vehicle=models.ForeignKey(Vehicle, null=True, blank=True,on_delete=models.SET_NULL)
 
     def __str__(self):
         return '{}'.format(self.zone)
